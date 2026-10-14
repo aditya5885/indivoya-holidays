@@ -1,0 +1,296 @@
+.section {
+  padding: 6.5rem 0;
+  background: #f2f5f7;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Device Mockup */
+.deviceCol {
+  display: flex;
+  justify-content: center;
+}
+
+.deviceFrame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: #e5e9ec;
+  border: 10px solid #dbe1e6;
+  border-radius: 36px;
+  padding: 1.25rem 1rem 1rem;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.12), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.cameraNotch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.cameraLens {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2b333a;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.cameraSensor {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9ca3af;
+}
+
+.screenInner {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.screenHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: #6b7280;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 1rem;
+}
+
+.screenBadge {
+  font-weight: 600;
+  color: var(--green-950);
+}
+
+.screenTime {
+  font-family: monospace;
+}
+
+.plannerPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.plannerRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #f8fafc;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #edf2f7;
+}
+
+.checkDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.plannerRow strong {
+  display: block;
+  font-size: 0.84rem;
+  color: #111827;
+}
+
+.plannerRow small {
+  display: block;
+  font-size: 0.74rem;
+  color: #64748b;
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+.screenFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.liveIndicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.demoBtn {
+  background: #1f2937;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.demoBtn:hover {
+  background: #111827;
+}
+
+/* Right FAQ Tabs and Accordion */
+.faqCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabNav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.tabBtn {
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 14px;
+  background: transparent;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  color: #111827;
+}
+
+.tabBtnActive {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Rounded Pill Accordions matching image 4 */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.accordionItem {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.accordionItem:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.questionBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.6rem;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1f2937;
+  background: transparent;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.plusIcon {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #9ca3af;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.itemOpen .plusIcon {
+  color: var(--saffron);
+}
+
+.answer {
+  padding: 0 1.6rem 1.4rem;
+  animation: answerIn 0.25s ease-out;
+}
+
+.answer p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #4b5563;
+}
+
+@keyframes answerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .deviceCol {
+    order: 2;
+  }
+  .faqCol {
+    order: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 0;
+  }
+  .questionBtn {
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  .answer {
+    padding: 0 1.2rem 1.2rem;
+  }
+  .deviceFrame {
+    border-width: 6px;
+    border-radius: 28px;
+    padding: 0.85rem;
+  }
+}

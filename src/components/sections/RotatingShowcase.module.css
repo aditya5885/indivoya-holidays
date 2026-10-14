@@ -1,0 +1,432 @@
+.section {
+  padding: 6.5rem 0;
+  background: #fbfbfd;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 4.5rem;
+}
+
+.detailCol {
+  max-width: 36rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--saffron);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: #0f172a;
+  margin: 0 0 1rem;
+}
+
+.title [data-slot="italic"] {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-900);
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0 0 2rem;
+}
+
+/* Dynamic Interactive Feature Card */
+.activeCard {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s var(--ease-out);
+}
+
+.activeCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent, var(--saffron));
+  transition: background-color 0.3s;
+}
+
+.cardHeader {
+  margin-bottom: 1.2rem;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.counter {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #059669;
+}
+
+.cardTitle {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 0.25rem;
+}
+
+.cardState {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 1.4rem;
+}
+
+.circuitHighlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.15rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  margin-bottom: 1.6rem;
+  border: 1px solid #e2e8f0;
+}
+
+.circuitDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent, var(--saffron));
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.circuitHighlight strong {
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.circuitHighlight span {
+  display: block;
+  font-size: 0.88rem;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.cardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.2rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.exploreBtn {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent, var(--saffron));
+  transition: transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.exploreBtn:hover {
+  transform: translateX(4px);
+}
+
+.instantQuote {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+/* Orbit Dial Column */
+.orbitCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbitContainer {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ambientAura {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  transition: background 0.4s ease;
+}
+
+.orbitRing {
+  position: absolute;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(15, 23, 42, 0.16);
+  pointer-events: none;
+}
+
+.orbitRingOuter {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  pointer-events: none;
+}
+
+/* Center Core Display */
+.centerBadge {
+  position: absolute;
+  z-index: 5;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.12), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.centerIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.4rem;
+  transition: all 0.3s;
+}
+
+.centerSub {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+.centerName {
+  font-size: 1.05rem;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 2px 0 3px;
+  max-width: 130px;
+}
+
+.centerHint {
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+/* Rotating Orbit Wheel */
+.wheel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotateCircle 42s linear infinite;
+}
+
+.wheel:hover {
+  animation-play-state: paused;
+}
+
+.satellite {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconCircle {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  color: #334155;
+  border: 1.5px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s, border-color 0.25s, color 0.2s, background-color 0.2s;
+  animation: counterRotate 42s linear infinite;
+}
+
+.wheel:hover .iconCircle {
+  animation-play-state: paused;
+}
+
+.satellite:hover .iconCircle,
+.satelliteActive .iconCircle {
+  transform: scale(1.22);
+  background: var(--node-color, #0f172a);
+  color: #ffffff;
+  border-color: var(--node-color, #0f172a);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -22px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  animation: counterRotate 42s linear infinite;
+}
+
+.satellite:hover .tooltip,
+.satelliteActive .tooltip {
+  opacity: 1;
+  color: #0f172a;
+}
+
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .detailCol {
+    max-width: 100%;
+  }
+  .orbitContainer {
+    width: 400px;
+    height: 400px;
+    --orbit-radius: 155px;
+  }
+  .orbitRing {
+    width: 310px;
+    height: 310px;
+  }
+  .orbitRingOuter {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+  .activeCard {
+    padding: 1.5rem;
+  }
+  .cardTitle {
+    font-size: 1.35rem;
+  }
+  .orbitContainer {
+    width: 310px;
+    height: 310px;
+    --orbit-radius: 120px;
+  }
+  .orbitRing {
+    width: 240px;
+    height: 240px;
+  }
+  .orbitRingOuter {
+    width: 280px;
+    height: 280px;
+  }
+  .centerBadge {
+    width: 130px;
+    height: 130px;
+    padding: 0.75rem;
+  }
+  .centerName {
+    font-size: 0.88rem;
+    max-width: 100px;
+  }
+  .iconCircle {
+    width: 38px;
+    height: 38px;
+  }
+  .iconCircle svg {
+    width: 16px;
+    height: 16px;
+  }
+}

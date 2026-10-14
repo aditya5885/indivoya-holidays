@@ -1,0 +1,175 @@
+.section {
+  position: relative;
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 36rem) 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 2rem;
+  min-height: 34rem;
+}
+
+.copy {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.mark {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 0.75rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--saffron);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--green-950);
+}
+
+.title [data-slot="italic"] {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--saffron);
+}
+
+.text {
+  margin: 1.25rem auto 0;
+  max-width: 32rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  padding: 0.95rem 1.7rem;
+  border-radius: 12px;
+  background: rgba(249, 82, 12, 0.1);
+  color: var(--saffron-600);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s var(--ease-out);
+}
+
+.btn svg {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.btn:hover {
+  background: var(--saffron);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ---------- Floating photos ---------- */
+.photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 24px 50px -24px rgba(7, 42, 27, 0.45);
+  animation: float 7s ease-in-out infinite;
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.photo:hover .img {
+  transform: scale(1.08);
+}
+
+.p1 {
+  grid-column: 1;
+  grid-row: 1;
+  aspect-ratio: 4 / 3;
+  align-self: start;
+}
+
+.p2 {
+  grid-column: 3;
+  grid-row: 1;
+  aspect-ratio: 4 / 3;
+  align-self: start;
+  animation-delay: -2s;
+}
+
+.p3 {
+  grid-column: 1;
+  grid-row: 2;
+  width: 82%;
+  justify-self: end;
+  aspect-ratio: 4 / 3;
+  align-self: end;
+  animation-delay: -4s;
+}
+
+.p4 {
+  grid-column: 3;
+  grid-row: 2;
+  width: 88%;
+  aspect-ratio: 4 / 3;
+  align-self: end;
+  animation-delay: -1s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    min-height: 0;
+  }
+
+  .copy {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .p1 { grid-column: 1; grid-row: 2; }
+  .p2 { grid-column: 2; grid-row: 2; }
+  .p3 { grid-column: 1; grid-row: 3; width: 100%; justify-self: stretch; }
+  .p4 { grid-column: 2; grid-row: 3; width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo { animation: none; }
+}
