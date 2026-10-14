@@ -1,6 +1,5 @@
 export type Slide = {
   src: string;
-  poster?: string;
   alt: string;
   place: string;
   label: string;
@@ -17,7 +16,6 @@ export type Slide = {
 export const SLIDES: Slide[] = [
   {
     src: "/special/south.mp4",
-    poster: "/hero-kerala.jpg",
     alt: "Kerala backwaters and serene green lagoons",
     place: "Alleppey & Munnar, Kerala",
     label: "Kerala",
@@ -32,7 +30,6 @@ export const SLIDES: Slide[] = [
   },
   {
     src: "/special/Meghalaya.mp4",
-    poster: "/dest-meghalaya.jpg",
     alt: "Meghalaya waterfalls, living root bridges and cloud-kissed peaks",
     place: "Cherrapunji & Dawki, Meghalaya",
     label: "Meghalaya",
@@ -47,7 +44,6 @@ export const SLIDES: Slide[] = [
   },
   {
     src: "/special/jaipur.mp4",
-    poster: "/hero-rajasthan.jpg",
     alt: "Royal palaces, majestic forts and golden lights of Jaipur",
     place: "Jaipur, Rajasthan",
     label: "Jaipur",
@@ -62,7 +58,6 @@ export const SLIDES: Slide[] = [
   },
   {
     src: "/special/northie.mp4",
-    poster: "/hero-ladakh.jpg",
     alt: "Ladakh bike expedition across high Himalayan mountain passes",
     place: "Khardung La & Pangong, Ladakh",
     label: "Ladakh Ride",

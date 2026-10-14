@@ -130,7 +130,6 @@ export default function HomeHero() {
           <div className={styles.media}>
             <video
               key={slide.src}
-              poster={slide.poster}
               autoPlay
               muted
               playsInline
