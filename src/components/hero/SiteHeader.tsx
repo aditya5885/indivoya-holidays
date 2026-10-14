@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MenuIcon, PhoneIcon, SearchIcon, StayIcon, UserIcon } from "@/components/icons";
+import { MenuIcon, PhoneIcon, SearchIcon, StayIcon } from "@/components/icons";
 import { CONTACT_TEL } from "@/data/hero";
 import { guestLabel, type Tab, type Trip } from "./types";
 import styles from "./SiteHeader.module.css";
@@ -78,9 +78,6 @@ export default function SiteHeader({ trip, searchOpen, menuOpen, onOpenSearch, o
           <a href={CONTACT_TEL} className={styles.iconBtn} aria-label="Call us" id="call-btn">
             <PhoneIcon />
           </a>
-          <button type="button" className={`${styles.iconBtn} ${styles.account}`} aria-label="My account" id="account-btn">
-            <UserIcon />
-          </button>
           <button
             type="button"
             className={styles.iconBtn}
