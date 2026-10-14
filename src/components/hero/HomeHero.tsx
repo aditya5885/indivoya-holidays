@@ -130,7 +130,7 @@ export default function HomeHero() {
           <div className={styles.media}>
             <video
               key={slide.src}
-              src={slide.src}
+              poster={slide.poster}
               autoPlay
               muted
               playsInline
@@ -138,7 +138,9 @@ export default function HomeHero() {
               className={styles.slideVideo}
               onLoadedMetadata={handleVideoLoadedMetadata}
               onEnded={goToNextSlide}
-            />
+            >
+              <source src={slide.src} type="video/mp4" />
+            </video>
           </div>
           <div className={styles.shade} aria-hidden />
 

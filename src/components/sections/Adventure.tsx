@@ -5,14 +5,15 @@ export default function Adventure() {
     <section className={styles.section} id="adventure" aria-labelledby="adventure-title">
       <video
         className={styles.video}
-        src="/paraglide.mp4"
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
         aria-hidden
-      />
+      >
+        <source src="/paraglide.mp4" type="video/mp4" />
+      </video>
       <div className={styles.shade} aria-hidden />
 
       <div className={`container ${styles.content}`}>
