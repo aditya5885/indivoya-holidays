@@ -8,7 +8,16 @@ import Footer from "@/components/sections/Footer";
 import { TOUR_PACKAGES } from "@/data/pagesData";
 import styles from "./packages.module.css";
 
-const THEMES = ["All", "Honeymoon", "Family", "Adventure", "Heritage", "Spiritual"] as const;
+const THEMES = [
+  "All",
+  "Heritage",
+  "Grand Tour",
+  "Adventure",
+  "Nature",
+  "Family",
+  "Honeymoon",
+  "Spiritual",
+] as const;
 
 export default function PackagesPage() {
   const [selectedTheme, setSelectedTheme] = useState<string>("All");
@@ -48,7 +57,7 @@ export default function PackagesPage() {
                 </svg>
                 <input
                   type="text"
-                  placeholder="Search destination (Kerala, Rajasthan, Ladakh, etc.)..."
+                  placeholder="Search destination (Hyderabad, Rajasthan, Kashmir, Ladakh, Sikkim...)..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className={styles.searchInput}
@@ -75,13 +84,13 @@ export default function PackagesPage() {
         <section className={styles.gridSection}>
           <div className="container">
             <div className={styles.resultsCount}>
-              Showing <strong>{filtered.length}</strong> holiday packages
+              Showing <strong>{filtered.length}</strong> handcrafted holiday packages
             </div>
 
             <div className={styles.grid}>
               {filtered.map((pkg) => (
                 <article key={pkg.id} className={styles.card}>
-                  <div className={styles.imageWrap}>
+                  <Link href={`/packages/${pkg.slug}`} className={styles.imageWrap}>
                     <Image
                       src={pkg.image}
                       alt={pkg.title}
@@ -91,7 +100,7 @@ export default function PackagesPage() {
                     />
                     <span className={styles.themeTag}>{pkg.theme}</span>
                     <span className={styles.durationTag}>{pkg.duration}</span>
-                  </div>
+                  </Link>
 
                   <div className={styles.cardBody}>
                     <div className={styles.location}>
@@ -101,7 +110,9 @@ export default function PackagesPage() {
                       {pkg.destination} · {pkg.state}
                     </div>
 
-                    <h3 className={styles.pkgTitle}>{pkg.title}</h3>
+                    <Link href={`/packages/${pkg.slug}`} className={styles.titleLink}>
+                      <h3 className={styles.pkgTitle}>{pkg.title}</h3>
+                    </Link>
 
                     <div className={styles.ratingBar}>
                       <span className={styles.star}>★ {pkg.rating}</span>
@@ -116,15 +127,20 @@ export default function PackagesPage() {
                     </ul>
 
                     <div className={styles.cardFooter}>
-                      <div>
+                      <div className={styles.priceCol}>
                         <span className={styles.priceLabel}>Starting from</span>
                         <div className={styles.priceVal}>
                           {pkg.price} <small>/ person</small>
                         </div>
                       </div>
-                      <Link href={`/contact?package=${encodeURIComponent(pkg.title)}`} className={styles.bookBtn}>
-                        Book / Inquire
-                      </Link>
+                      <div className={styles.actionsGroup}>
+                        <Link href={`/packages/${pkg.slug}`} className={styles.viewBtn}>
+                          Itinerary →
+                        </Link>
+                        <Link href={`/contact?package=${encodeURIComponent(pkg.title)}`} className={styles.bookBtn}>
+                          Inquire
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -137,3 +153,4 @@ export default function PackagesPage() {
     </>
   );
 }
+
