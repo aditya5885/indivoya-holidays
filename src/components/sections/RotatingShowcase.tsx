@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import {
   PalmIcon,
@@ -26,6 +27,7 @@ type DestinationNode = {
   accent: string;
   image: string;
   toursCount: number;
+  href: string;
 };
 
 const DESTINATIONS: DestinationNode[] = [
@@ -40,6 +42,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#059669",
     image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
     toursCount: 14,
+    href: "/packages/grand-kerala-explorer-hills-backwaters-cliffs",
   },
   {
     id: "ladakh",
@@ -52,6 +55,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#0284c7",
     image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=600&auto=format&fit=crop&q=80",
     toursCount: 9,
+    href: "/packages/mystic-ladakh-pangong-nubra",
   },
   {
     id: "rajasthan",
@@ -64,6 +68,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#ea580c",
     image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&auto=format&fit=crop&q=80",
     toursCount: 18,
+    href: "/packages/royal-rajasthan-jaipur-jodhpur-udaipur",
   },
   {
     id: "kashmir",
@@ -76,6 +81,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#0d9488",
     image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&auto=format&fit=crop&q=80",
     toursCount: 11,
+    href: "/packages/kashmir-paradise-srinagar-gulmarg-pahalgam",
   },
   {
     id: "goa",
@@ -88,6 +94,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#f59e0b",
     image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&auto=format&fit=crop&q=80",
     toursCount: 8,
+    href: "/packages/goa-sun-sand-heritage-getaway",
   },
   {
     id: "himachal",
@@ -100,6 +107,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#16a34a",
     image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&auto=format&fit=crop&q=80",
     toursCount: 15,
+    href: "/packages/himachal-shimla-kullu-manali",
   },
   {
     id: "varanasi",
@@ -112,6 +120,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#dc2626",
     image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&auto=format&fit=crop&q=80",
     toursCount: 7,
+    href: "/packages/divine-varanasi-ganga-aarti-sarnath",
   },
   {
     id: "andaman",
@@ -124,6 +133,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#06b6d4",
     image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&auto=format&fit=crop&q=80",
     toursCount: 6,
+    href: "/packages/andaman-exotic-havelock-neil-islands",
   },
   {
     id: "meghalaya",
@@ -136,6 +146,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#6366f1",
     image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&auto=format&fit=crop&q=80",
     toursCount: 8,
+    href: "/packages/meghalaya-living-root-bridges-dawki",
   },
   {
     id: "sikkim",
@@ -148,6 +159,7 @@ const DESTINATIONS: DestinationNode[] = [
     accent: "#8b5cf6",
     image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&auto=format&fit=crop&q=80",
     toursCount: 10,
+    href: "/packages/darjeeling-gangtok-eastern-himalayas",
   },
 ];
 
@@ -191,9 +203,9 @@ export default function RotatingShowcase() {
             </div>
 
             <div className={styles.cardFoot}>
-              <a href="#packages" className={styles.exploreBtn}>
+              <Link href={current.href} className={styles.exploreBtn}>
                 Explore {current.name.split(" ")[0]} Packages →
-              </a>
+              </Link>
               <span className={styles.instantQuote}>Customized in 2 hours</span>
             </div>
           </div>

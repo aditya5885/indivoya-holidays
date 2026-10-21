@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { PLACES, TOP_PLACES } from "@/data/home";
 import styles from "./TopDestinations.module.css";
@@ -44,7 +45,7 @@ export default function TopDestinations() {
         {TOP_PLACES.map((key) => {
           const p = PLACES[key];
           return (
-            <a href="#adventure" key={key} className={styles.card}>
+            <Link href={p.href} key={key} className={styles.card} aria-label={`View tour package for ${p.name}, ${p.state}`}>
               <Image src={p.src} alt={`${p.name}, ${p.state}`} fill sizes="(max-width: 700px) 80vw, 30vw" className={styles.img} />
               <div className={styles.shade} aria-hidden />
               <div className={styles.label}>
@@ -60,7 +61,7 @@ export default function TopDestinations() {
                   </svg>
                 </span>
               </div>
-            </a>
+            </Link>
           );
         })}
         <div className={styles.spacer} aria-hidden />

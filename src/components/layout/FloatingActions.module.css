@@ -156,16 +156,42 @@
   }
   .iconCircleWhatsapp,
   .iconCircleCall {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
   }
   .pulseRing,
   .pulseRingCall {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
   }
   .badgeLeft,
   .badgeRight {
     display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .floatLeft {
+    bottom: 1rem;
+    left: 1rem;
+  }
+  .floatRight {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .iconCircleWhatsapp,
+  .iconCircleCall {
+    width: 44px;
+    height: 44px;
+  }
+  .pulseRing,
+  .pulseRingCall {
+    width: 44px;
+    height: 44px;
+  }
+  .iconCircleWhatsapp svg,
+  .iconCircleCall svg {
+    width: 22px;
+    height: 22px;
   }
 }

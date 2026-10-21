@@ -935,4 +935,63 @@
   .imageShowcase {
     height: 280px;
   }
+
+  .extensionsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroSection {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .heroTitle {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+
+  .specsRibbon {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0.9rem;
+    border-radius: 12px;
+  }
+
+  .specItem {
+    gap: 0.15rem;
+  }
+
+  .specValue {
+    font-size: 0.88rem;
+  }
+
+  .dayHeader {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .dayTitle {
+    font-size: 1.05rem;
+  }
+
+  .hotelTableWrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tierHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tierPrice {
+    font-size: 1.15rem;
+  }
+
+  .bookingCard {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
 }

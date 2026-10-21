@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { FEATURED_TABS, PLACES } from "@/data/home";
 import styles from "./Featured.module.css";
@@ -46,7 +47,13 @@ export default function Featured() {
           {tab.places.map((key, i) => {
             const p = PLACES[key];
             return (
-              <a href="#packages" key={key} className={styles.card} style={{ "--i": i } as React.CSSProperties}>
+              <Link
+                href={p.href}
+                key={key}
+                className={styles.card}
+                style={{ "--i": i } as React.CSSProperties}
+                aria-label={`Explore tour packages for ${p.name}, ${p.state}`}
+              >
                 <div className={styles.frame}>
                   <Image src={p.src} alt={`${p.name}, ${p.state}`} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" className={styles.img} />
                   <span className={styles.badge}>{p.tours} tours</span>
@@ -57,7 +64,7 @@ export default function Featured() {
                   </svg>
                   {p.name}, {p.state}
                 </h3>
-              </a>
+              </Link>
             );
           })}
         </div>

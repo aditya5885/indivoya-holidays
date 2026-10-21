@@ -80,6 +80,9 @@ export default function Footer() {
                   <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
+              <li>
+                <Link href="/admin/testimonials" style={{ color: "var(--gold)" }}>Admin Testimonials</Link>
+              </li>
             </ul>
           </div>
 

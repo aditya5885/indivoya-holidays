@@ -363,8 +363,45 @@
 }
 
 @media (max-width: 680px) {
+  .hero {
+    padding: 3.5rem 0 3rem;
+  }
+  .title {
+    font-size: 2.1rem;
+  }
+  .lead {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .searchBox {
+    padding: 0.65rem 1rem;
+  }
+  .themePills {
+    gap: 0.4rem;
+  }
+  .themeBtn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+  }
   .grid {
     grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
+  .cardBody {
+    padding: 1.25rem;
+  }
+  .pkgCardHeader {
+    margin-bottom: 0.75rem;
+  }
+  .cardFoot {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .cardActions {
+    width: 100%;
+    justify-content: flex-end;
   }
 }
 

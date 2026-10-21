@@ -132,6 +132,33 @@
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 560px) {
-  .grid { grid-template-columns: 1fr; }
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .sub {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+  .tabs {
+    gap: 0.45rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .tab {
+    padding: 0.5rem 0.95rem;
+    font-size: 0.85rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+    gap: 1.25rem;
+  }
+  .name {
+    font-size: 0.98rem;
+    margin-top: 0.75rem;
+  }
 }

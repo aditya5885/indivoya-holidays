@@ -42,6 +42,9 @@ export default function MenuDrawer({ closing, onClose, onClosed }: Props) {
             {l.label}
           </Link>
         ))}
+        <Link href="/admin/testimonials" onClick={onClose} style={{ animationDelay: `0.32s`, color: "var(--gold)" }}>
+          Admin Testimonials Desk
+        </Link>
       </nav>
 
       <div>

@@ -1844,4 +1844,142 @@ export const TOUR_PACKAGES: TourPackage[] = [
     packageInclusions: ["4 Nights in eco-luxury cottages", "Daily breakfast", "Private SUV throughout", "Guide fees for Root Bridge"],
     packageExclusions: ["Flights", "Boating fees at Dawki", "Personal expenses", "GST 5%"],
   },
+
+  // 15. GOA COASTAL & PORTUGUESE HERITAGE
+  {
+    id: "pkg-goa-coastal-heritage-5d",
+    slug: "goa-sun-sand-heritage-getaway",
+    title: "Sun, Sand & Portuguese Heritage: Goa Coastal Getaway",
+    destination: "North Goa (Calangute, Baga, Fort Aguada) & South Goa (Old Goa, Panaji, Miramar)",
+    state: "Goa",
+    duration: "4 Nights / 5 Days",
+    price: "₹14,500",
+    rating: 4.9,
+    reviewsCount: 116,
+    image: "/dest-goa.jpg",
+    highlights: [
+      "UNESCO World Heritage Churches of Old Goa (Basilica of Bom Jesus & Sé Cathedral)",
+      "Fontainhas Latin Quarter Guided Architectural Heritage Walk",
+      "Sunset Mandovi River Catamaran Cruise with Goan Folk Dance",
+      "Fort Aguada 17th-Century Portuguese Lighthouse overlooking Sinquerim",
+      "North Goa Golden Beaches (Calangute, Anjuna, Baga) & Beachside Cafes",
+      "Spice Plantation Guided Tour with Authentic Traditional Goan Buffet Lunch",
+    ],
+    theme: "Honeymoon",
+    bestTimeToVisit: "Oct to May",
+    inclusions: [
+      "4 Nights in 4-Star Beachside Resort (Double Sharing)",
+      "Daily Buffet Breakfast at the Resort",
+      "Private Air-Conditioned Sedan with Dedicated Chauffeur for all Days",
+      "Goa Airport / Railway Station Transfers (Pickup & Drop)",
+      "Old Goa, Panaji, Fontainhas & North Goa Sightseeing Circuits",
+      "All Parking, Fuel, Tolls, and Driver Allowances Included",
+    ],
+    overview:
+      "Experience the idyllic blend of sun-kissed beaches, swaying palms, and 450 years of Portuguese heritage. From the cobblestone alleys of Fontainhas Latin Quarter to the grand basilicas of Old Goa, sunset catamaran cruises on the Mandovi River, and relaxation along Goa's golden coastlines.",
+    guests: "2 Adults (Double Sharing)",
+    hotelCategory: "4-Star Beach Resort",
+    mealPlan: "Daily Breakfast Buffet",
+    transportation: "Private AC Sedan with Chauffeur",
+    pickupDrop: "Goa Airport (GOI / GOX) or Madgaon / Thivim Station",
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Arrival in Goa & Beachside Leisure",
+        description:
+          "Arrive at Goa Airport (Dabolim / Mopa) or Railway Station. Meet your private chauffeur and transfer to your 4-star resort. Spend the afternoon unwinding by the pool or enjoying a sunset stroll along Calangute and Candolim beach.",
+        places: ["Candolim Beach", "Calangute Coastline"],
+        overnight: "North Goa Resort",
+        meals: "Self / Optional Resort Dining",
+      },
+      {
+        day: "Day 2",
+        title: "North Goa Forts, Cliffs & Vibrant Coastlines",
+        description:
+          "After breakfast, explore historic Fort Aguada and its 17th-century lighthouse. Visit the dramatic red cliffs of Chapora Fort (famed from Bollywood cinema) overlooking Vagator Beach, followed by leisure time at Anjuna and Baga beach shacks.",
+        places: ["Fort Aguada", "Chapora Fort", "Anjuna Beach", "Baga Beach"],
+        highlights: ["Panoramic Arabian Sea Views", "Water Sports (Optional)", "Vibrant Beach Shacks"],
+        overnight: "North Goa Resort",
+        meals: "Breakfast",
+      },
+      {
+        day: "Day 3",
+        title: "Old Goa UNESCO Heritage & Fontainhas Latin Quarter",
+        description:
+          "Full day exploring Goa's cultural heart. Visit the UNESCO World Heritage Basilica of Bom Jesus, Sé Cathedral, and Church of St. Francis of Assisi. Drive to Panaji for a guided walking tour through the colorful Portuguese Latin Quarter of Fontainhas with azulejos tile architecture. Evening sunset boat cruise on the Mandovi River with Goan cultural folk music and dance.",
+        places: ["Basilica of Bom Jesus", "Sé Cathedral", "Fontainhas Latin Quarter", "Mandovi River"],
+        highlights: ["St. Francis Xavier Relics", "Colorful Portuguese Architecture", "Sunset Mandovi River Cruise"],
+        overnight: "North Goa Resort",
+        meals: "Breakfast",
+      },
+      {
+        day: "Day 4",
+        title: "Sahakari Spice Plantation & Miramar Beach",
+        description:
+          "Drive into Ponda's lush tropical hinterland for a guided tour of an organic spice plantation. Learn about vanilla, cardamom, and cinnamon cultivation followed by a traditional Goan buffet lunch served on banana leaves. Later, visit Dona Paula viewpoint and Miramar Beach overlooking Mormugao Bay.",
+        places: ["Sahakari Spice Farm", "Dona Paula Viewpoint", "Miramar Beach"],
+        highlights: ["Aromatic Spice Walk", "Authentic Goan Feast", "Arabian Sea Sunset"],
+        overnight: "North Goa Resort",
+        meals: "Breakfast & Traditional Spice Lunch",
+      },
+      {
+        day: "Day 5",
+        title: "Souvenir Shopping & Airport Departure",
+        description:
+          "Enjoy a leisurely breakfast and morning swim. Check out and indulge in last-minute shopping for Goan feni, cashew nuts, and spices in Panaji or Mapusa market before being escorted to the airport/station for your onward flight.",
+        places: ["Panaji Local Markets", "Airport Departure"],
+        meals: "Breakfast",
+      },
+    ],
+    pricingTiers: [
+      {
+        tierName: "Standard 3-Star Comfort",
+        pricePerPerson: "₹11,500/- per person",
+        note: "Double occupancy with daily breakfast and private AC sedan transfers.",
+        hotels: [
+          { destination: "North Goa", stay: "4 Nights", hotel: "BloomSuites / Lemon Tree Beach Stay", roomCategory: "Standard Deluxe Room", mealPlan: "Breakfast" },
+        ],
+      },
+      {
+        tierName: "Premium 4-Star Resort (Recommended)",
+        pricePerPerson: "₹14,500/- per person",
+        note: "Double occupancy with daily buffet breakfast, Mandovi cruise tickets, and dedicated sedan.",
+        hotels: [
+          { destination: "North Goa", stay: "4 Nights", hotel: "Novotel Goa Resort & Spa / Heritage Village Resort", roomCategory: "Superior Pool View Room", mealPlan: "Breakfast" },
+        ],
+      },
+      {
+        tierName: "Luxury 5-Star Coastal Experience",
+        pricePerPerson: "₹24,900/- per person",
+        note: "Luxury 5-star beachfront resort with club lounge benefits and Innova Crysta transfers.",
+        hotels: [
+          { destination: "South / North Goa", stay: "4 Nights", hotel: "Taj Fort Aguada Resort & Spa / W Goa / Alila Diwa", roomCategory: "Sea View Luxury Suite", mealPlan: "Buffet Breakfast & High Tea" },
+        ],
+      },
+    ],
+    packageInclusions: [
+      "4 Nights accommodation in selected hotel tier (Double sharing).",
+      "Daily breakfast at the resort restaurant.",
+      "Private Air-Conditioned Sedan with professional chauffeur for all 5 days.",
+      "Goa Airport (GOI/GOX) or Railway Station pickup and drop.",
+      "Old Goa UNESCO Churches and Fontainhas Latin Quarter sightseeing.",
+      "North Goa beaches & Fort Aguada circuit.",
+      "Sunset Mandovi River Cruise passes.",
+      "All toll taxes, parking fees, fuel costs, and driver allowances.",
+    ],
+    packageExclusions: [
+      "Airfare or train fare to/from Goa.",
+      "Meals other than specified.",
+      "Water sports activities (scuba, parasailing, jet-ski).",
+      "Personal expenses, room service, laundry, telephone calls.",
+      "Mandatory gala dinner supplements during Christmas and New Year peak dates.",
+      "GST 5% as applicable.",
+    ],
+    importantNotes: [
+      "Check-in time is 2:00 PM and check-out time is 11:00 AM across Goan resorts.",
+      "Early check-in and late check-out are subject to resort availability.",
+      "Fontainhas is a residential heritage zone; travelers are requested to respect residents' privacy during photo stops.",
+      "Monsoon months (June - September) offer lush green Goa with cascading waterfalls, while October to May provides calm seas.",
+    ],
+  },
 ];
