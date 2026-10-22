@@ -1,0 +1,85 @@
+# ==============================================================================
+# Indivoya Holidays - High Performance & Hardened Hostinger / Apache Configuration
+# ==============================================================================
+
+# 1. DIRECTORY CONFIGURATION & INDEX
+DirectoryIndex index.html index.php
+Options -Indexes -MultiViews
+ServerSignature Off
+
+# 2. GZIP & DEFLATE COMPRESSION
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf font/woff font/woff2
+</IfModule>
+
+# 3. GLOBAL SECURITY & CACHE-CONTROL HEADERS
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Dynamic PHP APIs
+  <FilesMatch "\.php$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+  </FilesMatch>
+
+  # HTML Pages
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Immutable Static Chunks & Bundles
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Static Media & Images
+  <FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico|woff2|woff|ttf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Byte-Range Streaming for Parachute & Hero Videos
+  <FilesMatch "\.(mp4|webm)$">
+    Header set Accept-Ranges bytes
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+# 4. BLOCK ACCESS TO HIDDEN AND SENSITIVE FILES
+<FilesMatch "^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+<FilesMatch "\.(ts|tsx|json|sql|sqlite|db|env|log|bak|sh|yml|yaml|ini|conf|md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+# 5. REWRITE ENGINE & URL ROUTING
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # FastCGI Auth Header
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+  # Block traversal attacks
+  RewriteCond %{QUERY_STRING} (\.\./|\.\.\\) [NC]
+  RewriteRule .* - [F,L]
+
+  # Route Testimonials API to PHP handler if running on Apache/PHP Hostinger
+  RewriteRule ^api/testimonials/?$ api/testimonials.php [L]
+
+  # Clean URLs (.html extension mapping)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>

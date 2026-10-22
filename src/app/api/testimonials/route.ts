@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+export const dynamic = "force-static";
+
 const PHP_API_URL = "http://localhost:8085/api/testimonials.php";
 const DATA_PATH = path.join(process.cwd(), "src", "data", "testimonials.json");
 
