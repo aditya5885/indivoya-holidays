@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { ArrowRightIcon, SearchIcon, StarIcon } from "@/components/icons";
-import { SLIDES, SLIDE_MS } from "@/data/hero";
+import { SLIDES } from "@/data/hero";
 import MenuDrawer from "./MenuDrawer";
 import SearchPanel from "./SearchPanel";
 import SiteHeader from "./SiteHeader";

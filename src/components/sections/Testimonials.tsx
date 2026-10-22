@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import styles from "./Testimonials.module.css";
 
 type Testimonial = {
@@ -123,34 +122,6 @@ export default function Testimonials() {
               </article>
             );
           })}
-        </div>
-
-        {/* Admin Desk Link Button */}
-        <div style={{ textAlign: "center", marginTop: "3.5rem" }}>
-          <Link
-            href="/admin/testimonials"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              padding: "0.6rem 1.25rem",
-              borderRadius: "999px",
-              background: "#ffffff",
-              border: "1px solid rgba(18, 32, 26, 0.12)",
-              color: "var(--green-950)",
-              fontSize: "0.82rem",
-              fontWeight: 600,
-              textDecoration: "none",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.04)",
-              transition: "all 0.2s",
-            }}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 20h9" />
-              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-            </svg>
-            <span>Testimonial Manager Desk (Admin)</span>
-          </Link>
         </div>
       </div>
     </section>

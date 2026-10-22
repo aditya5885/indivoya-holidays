@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { MenuIcon, PhoneIcon, StayIcon } from "@/components/icons";
+import { MenuIcon, PhoneIcon } from "@/components/icons";
 import { CONTACT_TEL, NAV_LINKS } from "@/data/hero";
 import MenuDrawer from "@/components/hero/MenuDrawer";
 import styles from "./SubNav.module.css";

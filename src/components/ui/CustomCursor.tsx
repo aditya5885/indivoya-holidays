@@ -18,7 +18,7 @@ export default function CustomCursor() {
   useEffect(() => {
     // Disable on touch screens
     if (window.matchMedia("(pointer: coarse)").matches) return;
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
 
     const onMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
@@ -74,6 +74,7 @@ export default function CustomCursor() {
       window.removeEventListener("mouseup", onMouseUp);
       document.removeEventListener("mouseleave", onMouseLeave);
       document.removeEventListener("mouseenter", onMouseEnter);
+      cancelAnimationFrame(frame);
       cancelAnimationFrame(rafId);
     };
   }, [isVisible]);

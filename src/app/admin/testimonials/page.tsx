@@ -61,7 +61,30 @@ export default function AdminTestimonialsPage() {
   };
 
   useEffect(() => {
-    loadTestimonials();
+    let ignore = false;
+    fetch("/api/testimonials", { cache: "no-store" })
+      .then((res) => res.json())
+      .then((json) => {
+        if (!ignore && json.success && Array.isArray(json.data)) {
+          setItems(json.data);
+          setSource(json.source === "php_backend" ? "PHP SQLite API (Port 8085 Connected)" : "Local Storage Synced");
+        }
+      })
+      .catch((err) => {
+        if (!ignore) {
+          console.error("Failed to load testimonials:", err);
+          setSource("Offline Mode");
+        }
+      })
+      .finally(() => {
+        if (!ignore) {
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      ignore = true;
+    };
   }, []);
 
   const showToast = (msg: string) => {
