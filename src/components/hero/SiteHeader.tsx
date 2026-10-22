@@ -70,6 +70,7 @@ export default function SiteHeader({ trip, searchOpen, menuOpen, onOpenSearch, o
 
         <div className={styles.actions}>
           <nav className={styles.navLinks} aria-label="Quick Navigation">
+            <Link href="/" className={styles.navLink}>Home</Link>
             <Link href="/about" className={styles.navLink}>About</Link>
             <Link href="/packages" className={styles.navLink}>Packages</Link>
             <Link href="/blogs" className={styles.navLink}>Blogs</Link>
